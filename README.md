@@ -45,8 +45,8 @@ Lenis mejora sustancialmente la experiencia de desplazamiento mediante:
 
 1. Clonar el repositorio
 ```bash
-git clone [url-del-repositorio]
-cd [nombre-del-repositorio]
+git clone https://github.com/JCastro-bit/mi-demo-lenis
+cd mi-demo-lenis
 ```
 
 2. Instalar dependencias
