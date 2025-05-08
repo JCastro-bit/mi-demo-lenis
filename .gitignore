@@ -22,3 +22,19 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# vscode settings folder
+.vscode/
+# local history for vscode
+.history/
+
+# npm package lock
+package-lock.json
+
+# pnpm lock
+pnpm-lock.yaml
+
+# yarn lock
+yarn.lock
+# astro cache
+.astro/
