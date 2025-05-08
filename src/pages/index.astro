@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LenisScrollControls from '../components/LenisScrollControls';
+---
+
+<Layout title="Demo Lenis - Smooth Scrolling">
+  <nav>
+    <a href="#seccion1">Inicio</a>
+    <a href="#seccion2">Acerca de</a>
+    <a href="#seccion3">Características</a>
+    <a href="#seccion4">Contacto</a>
+  </nav>
+  
+  <LenisScrollControls client:load />
+
+  <main>
+    <section id="seccion1" class="section-1">
+      <div class="content">
+        <h1>Demo de Lenis Smooth Scroll</h1>
+        <p>Este es un ejemplo de scroll suave con Lenis y Astro.</p>
+        <p>Desliza hacia abajo o usa los enlaces de navegación para experimentar el efecto.</p>
+      </div>
+    </section>
+
+    <section id="seccion2" class="section-2">
+      <div class="content">
+        <h2>Acerca de Lenis</h2>
+        <p>Lenis es una biblioteca de scroll suave que permite una experiencia de navegación fluida y agradable.</p>
+        <p>Creada por Studio Freight, Lenis ofrece un rendimiento excepcional y es fácil de implementar en proyectos web.</p>
+      </div>
+    </section>
+
+    <section id="seccion3" class="section-3">
+      <div class="content">
+        <h2>Características</h2>
+        <p>Algunas características destacadas de Lenis:</p>
+        <ul>
+          <li>Scroll suave y natural</li>
+          <li>Alto rendimiento</li>
+          <li>Personalizable</li>
+          <li>Compatible con dispositivos táctiles</li>
+          <li>Soporte para scroll horizontal</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="seccion4" class="section-4">
+      <div class="content">
+        <h2>Contacto</h2>
+        <p>¿Te gusta esta demo? ¡Prueba implementar Lenis en tu propio proyecto!</p>
+        <p>Visita la <a href="https://github.com/studio-freight/lenis" target="_blank">documentación oficial de Lenis</a> para más información.</p>
+      </div>
+    </section>
+  </main>
+</Layout>
