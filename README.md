@@ -1,47 +1,101 @@
-# Astro Starter Kit: Minimal
+# Demo Lenis con Astro
 
-```sh
-npm create astro@latest -- --template minimal
+Demo interactiva de [Lenis](https://github.com/studio-freight/lenis), una biblioteca de scroll suave implementada con [Astro](https://astro.build) y React.
+
+## ¿Qué es Lenis?
+
+Lenis ("suave" en latín) es una biblioteca liviana, robusta y de alto rendimiento para crear experiencias de scroll suave. Desarrollada por [Studio Freight](https://www.studiofreight.com/), está diseñada para ser sencilla de usar y fácil de integrar en proyectos web.
+
+Lenis mejora sustancialmente la experiencia de desplazamiento mediante:
+
+- **Scroll suave:** Elimina el desplazamiento brusco nativo y lo reemplaza con animaciones fluidas
+- **Alto rendimiento:** Optimizado para evitar caídas de FPS o retrasos
+- **Control programático:** Permite pausar, reanudar y manipular el scroll
+- **Eventos personalizables:** Proporciona eventos para sincronizar animaciones con el desplazamiento
+- **Anclajes mejorados:** Navegación suave hacia secciones específicas
+
+## Estructura del proyecto
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
-├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/         # Componentes React
+│   │   ├── Lenis.tsx       # Proveedor principal de Lenis
+│   │   ├── LenisScrollControls.tsx # Controles interactivos
+│   │   └── ScrollEffects.tsx # Animaciones en scroll
+│   ├── layouts/
+│   │   └── Layout.astro    # Layout principal
+│   ├── pages/
+│   │   └── index.astro     # Página principal
+│   └── styles/
+│       └── lenis.css       # Estilos recomendados por Lenis
+└── astro.config.mjs        # Configuración de Astro
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Características de la demo
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Scroll suave entre secciones
+- Controles interactivos (pausar/reanudar scroll)
+- Barra de progreso visual
+- Navegación por anclajes
+- Animaciones vinculadas al scroll
+- Implementación con TypeScript
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Ejecutar la demo
 
-## 🧞 Commands
+1. Clonar el repositorio
+```bash
+git clone [url-del-repositorio]
+cd [nombre-del-repositorio]
+```
 
-All commands are run from the root of the project, from a terminal:
+2. Instalar dependencias
+```bash
+npm install
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+3. Iniciar el servidor de desarrollo
+```bash
+npm run dev
+```
 
-## 👀 Want to learn more?
+La demo estará disponible en `http://localhost:4321`
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Personalización
+
+Puedes ajustar la configuración de Lenis en el componente `Lenis.tsx`:
+
+```typescript
+// Inicializar Lenis con configuración personalizada
+const lenis = new Lenis({
+  duration: 1.2, // Duración de la animación (segundos)
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Función de easing
+  orientation: 'vertical', // Orientación del scroll
+  wheelMultiplier: 1, // Multiplicador para eventos de rueda del mouse
+  touchMultiplier: 2, // Multiplicador para eventos táctiles
+  smoothWheel: true, // Suavizar scroll con rueda
+  // Más opciones en la documentación oficial
+});
+```
+
+## Beneficios frente a CSS scroll-behavior
+
+Lenis ofrece ventajas significativas sobre `scroll-behavior: smooth` nativo:
+- Mayor control sobre el comportamiento del scroll
+- Rendimiento optimizado en todos los navegadores
+- API para manipular programáticamente el scroll
+- Eventos para sincronizar animaciones
+- Comportamiento consistente entre navegadores
+
+## Tecnologías utilizadas
+
+- [Astro](https://astro.build) v5
+- [React](https://react.dev)
+- [Lenis](https://github.com/studio-freight/lenis)
+- [TypeScript](https://www.typescriptlang.org)
+
+## Recursos
+
+- [Documentación oficial de Lenis](https://github.com/studio-freight/lenis)
+- [Demo oficial de Lenis](https://lenis.darkroom.engineering/)
+- [Documentación de Astro](https://docs.astro.build)

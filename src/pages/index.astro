@@ -1,6 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../Layouts/Layout.astro';
 import LenisScrollControls from '../components/LenisScrollControls';
+import ScrollEffects from '../components/ScrollEffects';
 ---
 
 <Layout title="Demo Lenis - Smooth Scrolling">
@@ -34,13 +35,7 @@ import LenisScrollControls from '../components/LenisScrollControls';
       <div class="content">
         <h2>Características</h2>
         <p>Algunas características destacadas de Lenis:</p>
-        <ul>
-          <li>Scroll suave y natural</li>
-          <li>Alto rendimiento</li>
-          <li>Personalizable</li>
-          <li>Compatible con dispositivos táctiles</li>
-          <li>Soporte para scroll horizontal</li>
-        </ul>
+        <ScrollEffects client:load />
       </div>
     </section>
 
